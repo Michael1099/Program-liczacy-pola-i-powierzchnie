@@ -1,0 +1,9 @@
+Instalacja:
+tar zxf Program-liczacy-pola-i-powierzchnie-0.1.tar.gz
+Po przejściu do wypakowanego folderu:
+./configure
+sudo make
+sudo make install
+
+Użycie:
+zad2 [długość boku]
