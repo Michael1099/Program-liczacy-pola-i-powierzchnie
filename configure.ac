@@ -1,4 +1,4 @@
-AC_INIT([zad2], [0.01], [michael1099@o2.pl])
+AC_INIT([zad2], [0.2], [michael1099@o2.pl])
 
 AC_PREREQ([2.69])
 
@@ -10,7 +10,9 @@ AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([m4])
 
 AM_INIT_AUTOMAKE([1.11.6 subdir-objects -Wall -Werror])
-AC_CONFIG_FILES([Makefile])
+AC_CONFIG_FILES([Makefile lib/Makefile src/Makefile])
+
+LT_INIT([disable-shared])
 
 AC_PROG_CC
 AM_PROG_CC_C_O
