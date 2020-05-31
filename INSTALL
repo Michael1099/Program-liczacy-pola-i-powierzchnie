@@ -1,5 +1,5 @@
 Instalacja:
-tar zxf Program-liczacy-pola-i-powierzchnie-0.2.tar.gz
+tar zxf Program-liczacy-pola-i-powierzchnie-0.3.tar.gz
 Po przejściu do wypakowanego folderu:
 ./configure
 sudo make

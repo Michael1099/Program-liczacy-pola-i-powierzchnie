@@ -1,4 +1,4 @@
-AC_INIT([zad2], [0.2], [michael1099@o2.pl])
+AC_INIT([zad2], [0.3], [michael1099@o2.pl])
 
 AC_PREREQ([2.69])
 
