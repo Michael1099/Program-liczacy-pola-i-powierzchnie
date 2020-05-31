@@ -12,7 +12,7 @@ AC_CONFIG_MACRO_DIR([m4])
 AM_INIT_AUTOMAKE([1.11.6 subdir-objects -Wall -Werror])
 AC_CONFIG_FILES([Makefile lib/Makefile src/Makefile])
 
-LT_INIT([disable-shared])
+LT_INIT
 
 AC_PROG_CC
 AM_PROG_CC_C_O

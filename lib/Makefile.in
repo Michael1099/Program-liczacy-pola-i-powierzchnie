@@ -102,6 +102,9 @@ libobjetosc_la_OBJECTS = $(am_libobjetosc_la_OBJECTS)
 libpole_la_LIBADD =
 am_libpole_la_OBJECTS = ../src/pole.lo
 libpole_la_OBJECTS = $(am_libpole_la_OBJECTS)
+libpole_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+	$(libpole_la_LDFLAGS) $(LDFLAGS) -o $@
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
 am__depfiles_maybe = depfiles
@@ -240,6 +243,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 lib_LTLIBRARIES = libpole.la libobjetosc.la
+libpole_la_LDFLAGS = -static
 libpole_la_SOURCES = ../src/pole.c ../src/libp.h
 libobjetosc_la_SOURCES = ../src/objetosc.c ../src/libo.h
 include_HEADERS = ../src/libp.h ../src/libo.h
@@ -322,7 +326,7 @@ libobjetosc.la: $(libobjetosc_la_OBJECTS) $(libobjetosc_la_DEPENDENCIES) $(EXTRA
 ../src/pole.lo: ../src/$(am__dirstamp) \
 	../src/$(DEPDIR)/$(am__dirstamp)
 libpole.la: $(libpole_la_OBJECTS) $(libpole_la_DEPENDENCIES) $(EXTRA_libpole_la_DEPENDENCIES) 
-	$(LINK) -rpath $(libdir) $(libpole_la_OBJECTS) $(libpole_la_LIBADD) $(LIBS)
+	$(libpole_la_LINK) -rpath $(libdir) $(libpole_la_OBJECTS) $(libpole_la_LIBADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
